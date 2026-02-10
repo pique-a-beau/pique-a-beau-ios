@@ -1,5 +1,6 @@
-import BaseFeature
+import FeatureFoundation
+import UIKit
 
 public protocol SplashFactory {
-    func makeCoordinator() -> Coordinator
+  func makeCoordinator() -> BaseCoordinator<SplashRoutePath>
 }

@@ -22,7 +22,7 @@ final class LeagueService {
 //
 //        return NetworkService.shared.get(to: .fixtureList)
 //            .tryMap { data, response in
-    ////                print(String(data: data, encoding: .utf8))
+  ////                print(String(data: data, encoding: .utf8))
 //                guard let httpResopnse = response as? HTTPURLResponse, httpResopnse.statusCode == 200 else {
 //                    print("http error")
 //                    throw URLError(.badServerResponse)

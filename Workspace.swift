@@ -2,8 +2,8 @@ import EnvironmentPlugin
 import ProjectDescription
 
 let workspace = Workspace(
-    name: environment.name,
-    projects: [
-        "Projects/**",
-    ]
+  name: environment.name,
+  projects: [
+    "Projects/**"
+  ],
 )

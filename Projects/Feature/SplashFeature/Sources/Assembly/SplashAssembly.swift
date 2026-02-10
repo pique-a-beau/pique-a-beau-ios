@@ -2,11 +2,12 @@ import SplashFeatureInterface
 import Swinject
 
 public final class SplashAssembly: Assembly {
-    public init() {}
+  
+  public init() {}
 
-    public func assemble(container: Container) {
-        container.register(SplashFactory.self) { _ in
-            SplashFactoryImpl()
-        }
+  public func assemble(container: Container) {
+    container.register(SplashFactory.self) { _ in
+      DefaultSplashFactory()
     }
+  }
 }

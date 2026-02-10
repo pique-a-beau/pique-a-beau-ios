@@ -1,18 +1,34 @@
-import BaseFeature
+import FeatureFoundation
+import HomeFeatureInterface
+import RxSwift
 import UIKit
 
-public final class HomeCoordinator: BaseCoordinator {
-    private let homeRouter: HomeRouter
-    private let homeViewController: HomeViewController
+public final class HomeCoordinator: BaseCoordinator<HomeRoutePath> {
+  
+  private let navigationController: UINavigationController
+  private let router: Router
+  private let homeViewController: HomeViewController
 
-    override public var rootViewController: UIViewController {
-        homeRouter.navigationController
-    }
+  init(
+    navigationController: UINavigationController,
+    router: Router,
+    viewController: HomeViewController
+  ) {
+    self.navigationController = navigationController
+    self.router = router
+    homeViewController = viewController
+    super.init()
+  }
 
-    init(homeRouter: HomeRouter, homeViewController: HomeViewController) {
-        self.homeRouter = homeRouter
-        self.homeViewController = homeViewController
-    }
+  override public var rootViewController: UIViewController {
+    navigationController
+  }
 
-    override public func start() {}
+  override public func start() {
+    router.setRoot(homeViewController, animated: false)
+    
+    homeViewController.routes
+      .bind(to: routes)
+      .disposed(by: disposeBag)
+  }
 }

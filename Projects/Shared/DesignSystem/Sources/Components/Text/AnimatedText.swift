@@ -1,3 +1,3 @@
 import UIKit
 
-final class AnimatedText: UIView {}
+final class AnimatedText: UIView { }

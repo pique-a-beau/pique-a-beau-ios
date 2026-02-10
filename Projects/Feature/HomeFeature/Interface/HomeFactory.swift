@@ -1,4 +1,10 @@
+import FeatureFoundation
+import UIKit
 
-public protocol HomeFactory {
-    func makeCoordinator()
+public enum HomeRoutePath: RoutePath {
+
+}
+
+public protocol HomeFactory: Factory {
+  func makeCoordinator(navigationController: UINavigationController) -> BaseCoordinator<HomeRoutePath>
 }

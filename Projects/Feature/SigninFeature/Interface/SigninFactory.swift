@@ -1,4 +1,5 @@
+import FeatureFoundation
 
 public protocol SigninFactory {
-    func makeCoordinator()
+  func makeCoordinator() -> BaseCoordinator<SigninRoutePath>
 }

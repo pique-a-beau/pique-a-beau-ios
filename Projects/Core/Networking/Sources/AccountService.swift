@@ -22,7 +22,8 @@ final class AccountService {
 //            .eraseToAnyPublisher()
 //    }
 //
-//    func signUp(name: String, account: String, password: String, nickName: String, phoneNumber: String, birth: String, firstTeam: String) -> AnyPublisher<ResponseMessage, Error> {
+//    func signUp(name: String, account: String, password: String, nickName: String, phoneNumber: String, birth: String,
+//    firstTeam: String) -> AnyPublisher<ResponseMessage, Error> {
 //        let params = [
 //            "name": name,
 //            "nickname": nickName,

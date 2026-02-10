@@ -7,14 +7,18 @@
 
 import Foundation
 
+// MARK: - MessageType
+
 enum MessageType {
-    case enter
-    case talk
+  case enter
+  case talk
 }
 
+// MARK: - Message
+
 public struct Message: Codable {
-    let type: String
-    let roomId: String
-    let sender: String
-    let message: String
+  let type: String
+  let roomId: String
+  let sender: String
+  let message: String
 }

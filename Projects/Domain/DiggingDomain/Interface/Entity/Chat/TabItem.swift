@@ -8,6 +8,6 @@
 import Foundation
 
 struct TabItem {
-    let title: String
-    let isTabbed: Bool
+  let title: String
+  let isTabbed: Bool
 }

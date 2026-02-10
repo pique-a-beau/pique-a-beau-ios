@@ -8,8 +8,8 @@
 import Foundation
 
 struct Point: Codable {
-    let id: UUID
-    let betPoint: Int
-    let pick: String
-    let result: Bool
+  let id: UUID
+  let betPoint: Int
+  let pick: String
+  let result: Bool
 }

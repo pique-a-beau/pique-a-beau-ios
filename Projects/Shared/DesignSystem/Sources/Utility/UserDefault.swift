@@ -8,7 +8,7 @@
 import Foundation
 
 final class UserDefault {
-    static let userdeault = UserDefault()
+  static let userdeault = UserDefault()
 
 //    func setUserInfo(user: User) {
 //        UserDefaults.standard.set(user.account, forKey: "account")
@@ -21,7 +21,8 @@ final class UserDefault {
 //    }
 
 //    func getToken() -> Token? {
-//        if let accessToken = UserDefaults.standard.string(forKey: "accessToken"), let refreshToken = UserDefaults.standard.string(forKey: "refreshToken") {
+//        if let accessToken = UserDefaults.standard.string(forKey: "accessToken"), let refreshToken =
+//        UserDefaults.standard.string(forKey: "refreshToken") {
 //            return Token(accessToken: accessToken, refreshToken: refreshToken)
 //        }
 //        return nil

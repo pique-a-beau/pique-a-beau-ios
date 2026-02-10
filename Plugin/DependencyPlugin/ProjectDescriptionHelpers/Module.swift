@@ -1,77 +1,98 @@
 import ProjectDescription
 
+// MARK: - Module
+
 public enum Module {
-    case feature(Feature)
-    case domain(Domain)
-    case data(Data)
-    case core(Core)
-    case shared(Shared)
+  case feature(Feature)
+  case domain(Domain)
+  case data(Data)
+  case core(Core)
+  case shared(Shared)
 
-    public func targetName(type: TargetType) -> String {
-        switch self {
-        case let .feature(feature):
-            feature.targetName(type: type)
-        case let .domain(domain):
-            domain.targetName(type: type)
-        case let .data(data):
-            data.targetName(type: type)
-        case let .core(core):
-            core.targetName(type: type)
-        case let .shared(shared):
-            shared.targetName(type: type)
-        }
+  // MARK: Public
+
+  public func targetName(type: TargetType) -> String {
+    switch self {
+    case .feature(let feature):
+      feature.targetName(type: type)
+    case .domain(let domain):
+      domain.targetName(type: type)
+    case .data(let data):
+      data.targetName(type: type)
+    case .core(let core):
+      core.targetName(type: type)
+    case .shared(let shared):
+      shared.targetName(type: type)
     }
+  }
 }
 
-public extension Module {
-    enum Feature: String, TargetPathConvertable, CaseIterable {
-        case BaseFeature
-        case RootFeature
-        case SigninFeature
-        case HomeFeature
-    }
+// MARK: Module.Feature
+
+extension Module {
+  public enum Feature: String, TargetPathConvertable, CaseIterable {
+    case RootFeature
+    case SplashFeature
+    case MainTabFeature
+    case SigninFeature
+    case HomeFeature
+    case ProfileFeature
+  }
 }
 
-public extension Module {
-    enum Domain: String, TargetPathConvertable {
-        case DiggingDomain
-    }
+// MARK: Module.Domain
+
+extension Module {
+  public enum Domain: String, TargetPathConvertable {
+    case DiggingDomain
+  }
 }
 
-public extension Module {
-    enum Data: String, TargetPathConvertable {
-        case Database
-    }
+// MARK: Module.Data
+
+extension Module {
+  public enum Data: String, TargetPathConvertable {
+    case Database
+  }
 }
 
-public extension Module {
-    enum Core: String, TargetPathConvertable {
-        case Networking
-    }
+// MARK: Module.Core
+
+extension Module {
+  public enum Core: String, TargetPathConvertable {
+    case Networking
+  }
 }
 
-public extension Module {
-    enum Shared: String, TargetPathConvertable {
-        case DesignSystem
-        case ThirdPartyLibrary
-        case Utils
-    }
+// MARK: Module.Shared
+
+extension Module {
+  public enum Shared: String, TargetPathConvertable {
+    case FeatureFoundation
+    case DesignSystem
+    case ThirdPartyLibrary
+    case Utils
+  }
 }
+
+// MARK: - TargetType
 
 public enum TargetType: String {
-    case interface = "Interface"
-    case sources = ""
-    case testing = "Testing"
-    case tests = "Tests"
-    case demo = "Demo"
+  case interface = "Interface"
+  case sources = ""
+  case testing = "Testing"
+  case tests = "Tests"
+  case demo = "Demo"
 }
+
+// MARK: - TargetPathConvertable
 
 public protocol TargetPathConvertable {
-    func targetName(type: TargetType) -> String
+  func targetName(type: TargetType) -> String
 }
 
-public extension TargetPathConvertable where Self: RawRepresentable {
-    func targetName(type: TargetType) -> String {
-        "\(rawValue)\(type.rawValue)"
-    }
+extension TargetPathConvertable where Self: RawRepresentable {
+  public func targetName(type: TargetType) -> String {
+    "\(rawValue)\(type.rawValue)"
+  }
 }

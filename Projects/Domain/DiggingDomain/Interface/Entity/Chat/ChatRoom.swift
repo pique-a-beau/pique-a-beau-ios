@@ -8,6 +8,6 @@
 import Foundation
 
 public struct ChatRoom: Codable {
-    let roomId: UUID
-    let name: String
+  let roomId: UUID
+  let name: String
 }

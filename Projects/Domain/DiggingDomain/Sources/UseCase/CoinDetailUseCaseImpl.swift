@@ -2,13 +2,21 @@ import CoinDomainInterface
 import RxSwift
 
 public final class CoinDetailUseCaseImpl: CoinDetailUseCase {
-    private let coinDetailRepository: CoinDetailRepository
 
-    init(coinDetailRepository: CoinDetailRepository) {
-        self.coinDetailRepository = coinDetailRepository
-    }
+  // MARK: Lifecycle
 
-    public func getCoinDetail(of coinId: String) -> Observable<Coin> {
-        coinDetailRepository.getCoinDetail(of: coinId)
-    }
+  init(coinDetailRepository: CoinDetailRepository) {
+    self.coinDetailRepository = coinDetailRepository
+  }
+
+  // MARK: Public
+
+  public func getCoinDetail(of coinId: String) -> Observable<Coin> {
+    coinDetailRepository.getCoinDetail(of: coinId)
+  }
+
+  // MARK: Private
+
+  private let coinDetailRepository: CoinDetailRepository
+
 }
