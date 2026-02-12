@@ -1,0 +1,91 @@
+---
+name: git-branch
+description: Git branch naming convention
+---
+
+## A solid, common convention
+
+**Format**
+
+```
+<type>/<scope>-<short-description>
+```
+
+**Examples**
+
+* `feat/auth-add-oauth-login`
+* `fix/cart-null-total`
+* `chore/deps-bump-axios`
+* `refactor/api-split-client`
+* `docs/readme-install`
+* `test/payment-edge-cases`
+
+### Recommended “type” prefixes
+
+Pick a small set and stick to it:
+
+* `feat/` – new feature
+* `fix/` – bug fix
+* `hotfix/` – urgent production fix (if you use it)
+* `chore/` – maintenance (deps, tooling, cleanup)
+* `refactor/` – code restructure without behavior change
+* `docs/` – documentation
+* `test/` – tests only
+* `perf/` – performance work
+* `ci/` – pipeline/build changes
+
+## Best practices (what usually works well)
+
+### 1) Keep it short, but descriptive
+
+Bad: `feat/add-new-login-feature-for-google-and-apple-with-ui-updates`
+Better: `feat/auth-social-login`
+
+### 2) Use lowercase + hyphens (avoid spaces/underscores)
+
+Good: `fix/order-timeout`
+Avoid: `Fix_Order_Timeout`, `fix order timeout`
+
+### 3) Include an issue/ticket ID if you have one
+
+Super helpful for traceability:
+
+* `feat/PROJ-123-auth-social-login`
+* `fix/JIRA-881-cart-null-total`
+
+### 4) Avoid ambiguous names like `test`, `new`, `tmp`, `stuff`
+
+If it’s experimental, be explicit:
+
+* `spike/search-ranking-idea`
+* `experiment/new-cache-strategy`
+
+### 5) Don’t encode dates or usernames unless you really need to
+
+Usually not necessary:
+
+* Prefer `feat/auth-social-login`
+* Over `john-2026-02-11-social-login`
+
+(If your org requires it, a light form is fine: `feat/john-auth-social-login`—but keep it consistent.)
+
+### 6) Make long-lived branches clearly “special”
+
+If you use them:
+
+* `main` / `master`
+* `develop`
+* `release/1.8.0`
+* `support/1.7.x`
+
+## Quick “ready to adopt” standard
+
+If you want something simple for a team:
+
+* Branches: `type/TICKET-short-desc`
+* Types: `feat`, `fix`, `chore`, `refactor`, `docs`, `test`, `ci`
+* Lowercase, hyphen-separated
+
+Example:
+
+* `feat/PROJ-104-add-oauth-login`
