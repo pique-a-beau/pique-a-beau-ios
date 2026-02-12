@@ -37,6 +37,7 @@ extension Module {
     case SigninFeature
     case HomeFeature
     case ProfileFeature
+    case OnboardingFeature
   }
 }
 
