@@ -13,7 +13,6 @@ public struct DefaultHomeFactory: HomeFactory {
     let viewController = HomeViewController(viewModel: viewModel)
     
     return HomeCoordinator(
-      navigationController: navigationController,
       router: router,
       viewController: viewController
     )
