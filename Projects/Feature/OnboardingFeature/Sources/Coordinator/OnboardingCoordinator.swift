@@ -4,24 +4,21 @@ import RxSwift
 import UIKit
 
 public final class OnboardingCoordinator: BaseCoordinator<OnboardingRoutePath> {
-  
-  private let navigationController: UINavigationController
+
   private let router: Router
   private let onboardingViewController: OnboardingViewController
 
   init(
-    navigationController: UINavigationController,
     router: Router,
     viewController: OnboardingViewController
   ) {
-    self.navigationController = navigationController
     self.router = router
     onboardingViewController = viewController
     super.init()
   }
 
   override public var rootViewController: UIViewController {
-    navigationController
+    onboardingViewController
   }
 
   override public func start() {

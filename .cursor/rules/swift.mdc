@@ -11,9 +11,12 @@ description: Clean Architecture with micro featrue
   - Use Swift's latest features and protocol-oriented programming
   - Prefer value types (structs) over classes
   - Clean Architecture + MVVM using tuist
+  - Viewmodel use Intput/Output pattern
+  - Output has State, Route
   - Follow Apple's Human Interface Guidelines
   
   # Clean Architecture
+
   - 5 Layer Design 
     - /App
     - /Feature
@@ -33,6 +36,7 @@ description: Clean Architecture with micro featrue
     - Presentation(ViewController/View, ViewModel)
   
   # Naming
+
   - camelCase for vars/funcs, PascalCase for types
   - Verbs for methods (fetchData)
   - Boolean: use is/has/should prefixes

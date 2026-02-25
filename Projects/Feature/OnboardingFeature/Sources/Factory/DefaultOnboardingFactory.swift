@@ -13,7 +13,6 @@ public struct DefaultOnboardingFactory: OnboardingFactory {
     let viewController = OnboardingViewController(viewModel: viewModel)
     
     return OnboardingCoordinator(
-      navigationController: navigationController,
       router: router,
       viewController: viewController
     )
